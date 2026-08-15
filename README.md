@@ -225,18 +225,7 @@ The importer recognizes many header spellings, but the cleanest format is:
 - Accepted header synonyms include: `Date` for Day; `From`/`Time` for Start Time; `To` for End Time; `Course Name` for Subject; `Course Code` for Subject Code; `Teacher`/`Instructor` for Faculty; `Classroom`/`Venue` for Room; `Sec` for Section; `Dept`/`Branch` for Department; `Sem` for Semester.
 - A ready-to-use template is available from **Admin → Upload Files → Sample Template**, and a static copy is included at `database/sample_timetable_template.xlsx`.
 
-## 13. Screenshots
-
-_Add screenshots here after running the app locally:_
-- Landing page
-- Login (split-screen)
-- Admin dashboard
-- Excel upload with drag-and-drop
-- Conflict report
-- Student dashboard
-- Weekly timetable (desktop grid + mobile daily view)
-
-## 14. Future Improvements
+## 13. Future Improvements
 
 - Email notifications when a new conflict affecting a student's section is detected
 - Bulk multi-file upload validation summary (all files in one report, not per-file only)
@@ -244,10 +233,6 @@ _Add screenshots here after running the app locally:_
 - Role-based sub-permissions (e.g. department coordinators who can only manage their own department)
 - Native PDF export (currently uses the browser's print-to-PDF) via a PDF library
 - Automated email verification on student registration
-
-## 15. Interview Explanation (short version)
-
-*"TimeSync solves a real problem — our college published ~40 separate Excel timetables per semester, and students had to manually search all of them. I built a PHP/MySQL system where admins upload each department's spreadsheet; I use PHPSpreadsheet to read it, a normalization layer to handle inconsistent headers across files, and validate every row before inserting. On import I run three conflict detectors — section, faculty, and room — all built on one correct time-overlap check (`start1 < end2 AND start2 < end1`) instead of naive exact-time matching, which is a common bug. Students register once with department/semester/section and their timetable is just their section's rows — genuinely personalized, not hardcoded. I kept business logic in one `functions.php` file separate from the page templates so it's testable and easy to explain, used PDO prepared statements and `password_hash()` throughout for security, and built a from-scratch CSS design system with a real mobile layout — the weekly timetable becomes a day-by-day timeline under 900px instead of just squeezing a table."*
 
 ---
 

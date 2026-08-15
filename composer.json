@@ -1,0 +1,12 @@
+{
+    "name": "timesync/smart-timetable",
+    "description": "Smart Timetable Management & Personalization System",
+    "type": "project",
+    "require": {
+        "php": ">=8.0",
+        "phpoffice/phpspreadsheet": "^1.29"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
